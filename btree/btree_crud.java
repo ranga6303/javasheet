@@ -3,9 +3,9 @@ package btree;
 public class btree_crud {
 
 
-    int value,order;
+    public int value,order;
 
-    node insert(node parent,node root){
+    public node insert(node parent,node root){
         if(root==null){
             node newnode=new node(order);
             newnode.key[newnode.nkey++]=value;
@@ -31,7 +31,7 @@ public class btree_crud {
     }
 
 
-    node split(node parent,node root){
+    public node split(node parent,node root){
         if(root.nkey<order-1)return root;
         node n1=new node(order),n2=new node(order);
         int max=root.nkey,mid=max/2,popup=root.key[mid];
