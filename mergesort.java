@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class mergesort {
     static void display(int i,int j,int[] a){
         while(i<=j)System.out.print(" "+a[i++]+" ");
     }
