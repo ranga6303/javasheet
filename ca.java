@@ -12,11 +12,6 @@ import java.math.RoundingMode;
 
 class validate implements valid{
 
-<<<<<<< HEAD
-    
-
-=======
->>>>>>> btree
     public boolean balance(String exp){
             int c=0,i=0;
             int len=exp.length();
@@ -43,17 +38,16 @@ class validate implements valid{
             int i=0,len=exp.length();
             boolean check=true;
     
-            if(((exp.charAt(i)=='/'||exp.charAt(i)=='*'||exp.charAt(i)=='+'||exp.charAt(i)=='-'||exp.charAt(i)=='(')||exp.charAt(i)=='^'||exp.charAt(i)=='.')&&(exp.charAt(i+1)=='/'||exp.charAt(i+1)=='*'||exp.charAt(i+1)=='+'||exp.charAt(i+1)=='-'||exp.charAt(i+1)==')'||exp.charAt(i+1)=='^')){
+            if(((exp.charAt(i)=='/'||exp.charAt(i)=='*'||exp.charAt(i)=='+'||exp.charAt(i)=='-'||exp.charAt(i)=='(')||exp.charAt(i)=='^')&&(exp.charAt(i+1)=='/'||exp.charAt(i+1)=='*'||exp.charAt(i+1)=='+'||exp.charAt(i+1)=='-'||exp.charAt(i+1)==')'||exp.charAt(i+1)=='^')){
                 check=false;
             }
             
     
-            if(exp.charAt(0)=='.'||exp.charAt(0)=='/'||exp.charAt(0)=='*'||exp.charAt(0)=='+'||exp.charAt(0)=='-'||exp.charAt(0)=='^'||(exp.charAt(len-1)=='/'||exp.charAt(len-1)=='*'||exp.charAt(len-1)=='+'||exp.charAt(len-1)=='-')||exp.charAt(len-1)=='.'||!isValid(exp)){
+            if(exp.charAt(0)=='/'||exp.charAt(0)=='*'||exp.charAt(0)=='+'||exp.charAt(0)=='-'||(exp.charAt(len-1)=='/'||exp.charAt(len-1)=='*'||exp.charAt(len-1)=='+'||exp.charAt(len-1)=='-')||!isValid(exp)){
                 check=false;
             }
             while(i<len-1&&check==true){
-                char ch=exp.charAt(i);
-        if((((exp.charAt(i)=='.'||exp.charAt(i)=='/'||exp.charAt(i)=='*'||exp.charAt(i)=='+'||exp.charAt(i)=='-'||exp.charAt(i)=='(')||exp.charAt(i)=='^')&&(exp.charAt(i+1)=='/'||exp.charAt(i+1)=='*'||exp.charAt(i+1)=='+'||exp.charAt(i+1)=='-'||exp.charAt(i+1)==')'||exp.charAt(i+1)=='^'))||((ch=='.'&&exp.charAt(i+1)=='(')||(ch==')'&&exp.charAt(i+1)=='.')||(ch=='.'&&exp.charAt(i+1)=='.'))){
+        if(((exp.charAt(i)=='/'||exp.charAt(i)=='*'||exp.charAt(i)=='+'||exp.charAt(i)=='-'||exp.charAt(i)=='(')||exp.charAt(i)=='^')&&(exp.charAt(i+1)=='/'||exp.charAt(i+1)=='*'||exp.charAt(i+1)=='+'||exp.charAt(i+1)=='-'||exp.charAt(i+1)==')'||exp.charAt(i+1)=='^')){
             check=false;
             break;
         }
@@ -61,12 +55,9 @@ class validate implements valid{
         ++i;
             }
             if(check==false){
-                System.out.println(check+"  "+i);
                 return false;
-
             }
             else
-            System.out.println(check);
             return true;
     
         }
@@ -165,8 +156,8 @@ class validate implements valid{
         while(i<size){
             ch=exp.charAt(i);
             
-            if(((int)ch>=48&&(int)ch<=57)||ch=='.'){
-                while(((int)ch>=48&&(int)ch<=57)||(ch=='.')){
+            if((int)ch>=48&&(int)ch<=57){
+                while((int)ch>=48&&(int)ch<=57){
                     str.append(ch);
                     ++i;
                     if(i==size){
@@ -175,23 +166,7 @@ class validate implements valid{
                     ch=exp.charAt(i);
                 }
                 num=str.toString();
-                int j=0,dcount=0;
-
-                while(j<num.length()){
-                    if(num.charAt(j)=='.')
-                    ++dcount;
-
-                    ++j;
-                }
-
-                if(dcount>1){
-                    System.err.println("invalid");
-                    System.exit(0);
-                }
-                
                 value.push(new BigDecimal(num));
-                
-                
                 str.setLength(0);
             }
 
@@ -206,7 +181,7 @@ class validate implements valid{
 
                     case '^':
                     double v1=value.pop().doubleValue(),v2=value.pop().doubleValue();
-                    double res=(Math.pow(v2,v1));
+                    double res=(Math.pow(v2, v1));
                     if(Double.isInfinite(res)){
                         System.out.println("infinity");
                         System.exit(0);
@@ -247,7 +222,7 @@ class validate implements valid{
             
         }
 
-       System.out.println("result is "+value.pop());
+       System.out.println(value.pop());
             }
     
             public static  int isoprater(char ch){
@@ -268,12 +243,12 @@ class validate implements valid{
             }
     
             public static boolean isdigit(char ch) {
-                return (ch >= '0' && ch <= '9')||(ch=='.'); 
+                return ch >= '0' && ch <= '9'; 
             }
         
 
     boolean isValid(String exp) {
-        String sample="0123456789/*+-()=^. ";
+        String sample="0123456789/*+-()=^ ";
         for (char ch : exp.toCharArray()) {  
             if (sample.indexOf(ch) == -1) {  
                 return false;
@@ -286,14 +261,14 @@ class validate implements valid{
 
 
 
-class caluculator{
+class ca{
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
         System.out.println("enter expression");
         String exp=s.nextLine();
         String pexp;
         exp=exp.replaceAll("\\s+","");
-        
+        System.out.println(exp);
         valid obj=new validate();
         if(obj.balance(exp)&&obj.istrue(exp)){
             pexp=obj.postfix(exp);
@@ -306,4 +281,3 @@ class caluculator{
         s.close();        
     }
 }
-

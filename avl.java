@@ -115,4 +115,8 @@ class avl{
         c.postorder(root);
         s.close();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> btree
