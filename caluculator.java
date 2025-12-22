@@ -12,11 +12,8 @@ import java.math.RoundingMode;
 
 class validate implements valid{
 
-<<<<<<< HEAD
     
 
-=======
->>>>>>> btree
     public boolean balance(String exp){
             int c=0,i=0;
             int len=exp.length();

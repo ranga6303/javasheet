@@ -1,4 +1,4 @@
-public class q {
+public class quicksort {
 
     static void swap(int[] a,int i,int j){
         int temp=a[i];

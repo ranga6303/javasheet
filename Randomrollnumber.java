@@ -1,9 +1,5 @@
 import java.util.*;
-<<<<<<< HEAD
 public class Randomrollnumber {
-=======
-public class random {
->>>>>>> btree
     public static void main(String[]args){
         Random r=new Random();
         Scanner s=new Scanner(System.in);
@@ -35,8 +31,4 @@ public class random {
         }
     s.close();
     }
-<<<<<<< HEAD
 }
-=======
-          
->>>>>>> btree
