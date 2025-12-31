@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Scanner;
 public class random{
-   public static void main(String[] var0){
+   public static void main(String[] args){
       Random r=new Random();
       Scanner s=new Scanner(System.in);
       System.out.print("enter size : ");
