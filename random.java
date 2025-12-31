@@ -7,7 +7,7 @@ public class random {
       System.out.print("enter size : ");
       int len=s.nextInt();
       for(int i=0;i<len;++i) {
-         int num= r.nextInt(100);
+         int num= r.nextInt(len*len);
          System.out.print("" +num+ " , ");
       }
       s.close();
