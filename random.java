@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.Scanner;
-public class random {
+public class random{
    public static void main(String[] var0){
       Random r=new Random();
       Scanner s=new Scanner(System.in);
