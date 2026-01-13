@@ -1,26 +1,10 @@
-public class nq {
 
-    static void dis(int[][] arr){
-    
-        for(int i=0;i<4;i++){
-            for(int j=0;j<4;j++){
-                System.out.print(arr[i][j]+" ");
-            }
-            System.out.println();
-        }
-    
-    }   
-    public static void main(String[] args) {
-        int board[][]=new int[4][4];
-        dis(board);
 
-        System.out.println("after");
-        for(int i=0;i<4;i++){
-            board[0][i]=1;
-            dis(board);
-        }
-    }
-}
+
+
+
+
+
 
 
 
@@ -85,17 +69,22 @@ public class nq {
 
 // // }
 
-// static void queenize(){
-//     while(root.nodeindex<4){
+// static void queenize(tree root){
+
+//     if(root.nodeindex>=4)return ;
+
+//     root.nodes[root.nodeindex++]=new tree(root.arr);
+//     tree temp=root.nodes[0];
+    
 //         for(int i=0;i<4;i++){
-//             for(int j=0;j<4;j++){
-                
-//             }
+//             temp.arr[i][0]=1;
 //         }
+
 //     }
-// }
+
 //     public static void main(String[] args) {
-//         dis(root);
+
+//         queenize(root);
 //     }
 // }
 

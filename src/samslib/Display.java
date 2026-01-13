@@ -1,6 +1,10 @@
 package samslib;
 
 public class Display {
+
+
+    
+
     public static void array(int[] arr){
         if(arr==null){
             System.out.println("array is empty");
