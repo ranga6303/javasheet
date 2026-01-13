@@ -7,21 +7,30 @@ public class slidingwindow1 {
     static HashSet<Integer> map=new HashSet<>();
     static int reqsum,temp,start;
     static int window(int[] arr,int winlen){
-        
-        for(int i=0;i<=arr.length-winlen;i++){
-            int k=i;
-            temp=0;
-            while(k<winlen+i){
-               if(map.contains(arr[k]))break;
-               map.add(arr[k]);
-               temp+=arr[k++];
-            }
+
+        for(int i=0;i<winlen;i++){
+            temp+=arr[i];
+            map.add(arr[i]);
+        }
+        reqsum=temp;
+        map.remove(arr[start]);
+        temp-=arr[start];
+
+        for(int i=1;i<arr.length-winlen;i++){
+            int k=i+winlen-1;
+            
+            if(map.contains(arr[k]))continue;
+
+            map.add(arr[k]);
+            temp+=arr[k];
+            
             if(reqsum<temp){
                 reqsum=temp;
                 start=i;
             }    
-            
-            map.clear();   
+
+            map.remove(arr[i]);
+            temp-=arr[i];
         }
         return reqsum;
     }
